@@ -1,0 +1,26 @@
+<!-- views/fruits/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Dog</title>
+  </head>
+  <body>
+    <h1>Create a New Dog!</h1>
+    <form action = "/dogs" method="POST">
+        <label for = "name"> Name:</label>
+        <input type ="text" name="name" id="name"/> 
+        <label for = "breed"> Breed:</label>
+        <input type="text" name="breed" id="breed"/>
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color"/>
+        <label for="size">Size:</label>
+        <input type="text" name="size" id="size"/>
+        <label for=" isAPuppy"> A Puppy?</label>
+        <input type="checkbox" name="isAPuppy" id="isAPuppy"/>
+        <button type ="submit">Add Dog</button>
+    </form>
+  </body>
+</html>
