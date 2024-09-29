@@ -49,6 +49,11 @@ await Dog.create(req.body);
 res.redirect("/dogs/new");
 });
 
+app.delete("/dogs/:dogId", async (req,res)=>{
+  await Dog.findByIdAndDelete(req.params.dogId);
+  res.redirect("/dogs");
+});
+
 app.listen(3000, () => {
   console.log("Listening on port 3000");
 });
