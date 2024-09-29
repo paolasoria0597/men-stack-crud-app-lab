@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= dog.name %></title>
+  </head>
+  <body>
+    <h1><% dog.name %></h1>
+    <p><%  dog.breed %></p>
+    <p><%  dog.color %></p>
+    <p><%  dog.size %></p>
+    <p><%  dog.breed %></p>
+    <% if (dog.isAPuppy) { %>
+    <p> This Dog is a puppy</p>
+<% } else { %>
+    <p> This Dog is not a puppy</p>
+   <% } %>
+   <a href=" /dogs/">Back to Dogs</a>
+  </body>
+</html>
