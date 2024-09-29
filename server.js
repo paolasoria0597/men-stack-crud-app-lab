@@ -49,7 +49,8 @@ await Dog.create(req.body);
 res.redirect("/dogs/new");
 });
 
-app.delete("/dogs/:dogId", async (req,res)=>{
+app.delete("/dogs/:dogId", async (req, res) => {
+  console.log("DELETE request received for dog ID:", req.params.dogId);
   await Dog.findByIdAndDelete(req.params.dogId);
   res.redirect("/dogs");
 });
