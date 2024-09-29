@@ -23,9 +23,16 @@ app.get ("/dogs", async (req,res)=> {
   res.render("dogs/index.ejs", {dogs:allDogs});
 });
 
+
 app. get ("/dogs/new", (req,res) => {
   res.render ("dogs/new.ejs");
 });
+
+app.get("/dogs/:dogId", async (req, res) => {
+  const foundDog = await Dog.findById(req.params.dogId);
+  res.render("dogs/show.ejs", { dog: foundDog });
+});
+
 
 app.post ("/dogs", async(req,res) => {
 if(req.body.isAPuppy==="on"){
