@@ -3,6 +3,8 @@ dotenv.config();
 
 const express = require("express");
 const mongoose = require("mongoose");
+const methodOverride= require("method-override");// middlewear
+const morgan= require ("morgan");
 const app = express();
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -13,6 +15,9 @@ mongoose.connection.on("connected", () => {
 
 const Dog = require ("./models/dog.js"); // I can use the Dog model in the request handling functions defined in my express routes. This setup will allow  created and this allows me to perform database operations like creating, deleting, aand updating dog documents in mongo DB
 app.use(express.urlencoded({extended: false}));
+app.use (methodOverride("_method"));
+app.use (morgan("dev"));
+
 app.get ("/", async (req,res) => {
     res.render("index.ejs");
 });
