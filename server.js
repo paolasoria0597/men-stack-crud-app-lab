@@ -60,6 +60,23 @@ app.get("/dogs/:dogId/edit", async (req,res) => {
   res.render("dogs/edit.ejs", { dog: foundDog, });
 });
 
+// server.js
+
+app.put("/dogs/:dogId", async (req, res) => {
+  // Handle the 'isReadyToEat' checkbox data
+  if (req.body.isAPuppy === "on") {
+    req.body.isAPuppy = true;
+  } else {
+    req.body.isAPuppy = false;
+  }
+  
+  // Update the fruit in the database
+  await Dog.findByIdAndUpdate(req.params.dogId, req.body);
+
+  // Redirect to the fruit's show page to see the updates
+  res.redirect(`/dogs/${req.params.dogId}`);
+});
+
 app.listen(3000, () => {
   console.log("Listening on port 3000");
 });
