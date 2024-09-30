@@ -5,6 +5,7 @@ const dogSchema= new mongoose.Schema({
     name: String,
     breed: String, 
     color: String,
+    size: String,
     isAPuppy: Boolean,
 });
 
