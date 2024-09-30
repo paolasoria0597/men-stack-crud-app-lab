@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Dog</title>
+  </head>
+  <body>
+    <h1> <%dog.name%></h1>
+    <form action = "/dogs/<%=dog._id%>?_method=PUT" method="POST">
+        <label for = "name">Name:</label>
+        <input type ="text" name="name" value="<%dog.name%>"/> 
+        <label for = "breed"> Breed:</label>
+        <input type="text" name="breed" value="<%dog.breed%>"/>
+        <label for="color">Color:</label>
+        <input type="text" name="color" value="<%dog.color%>"/>
+        <label for="size">Size:</label>
+        <input type="text" name="size" value="<%dog.size%>"/>
+        <label for=" isAPuppy"> A Puppy?</label>
+        <input type="checkbox" 
+        name="isAPuppy" 
+        id="isAPuppy"
+        <% if (dog.isAPuppy) { %>checked<%} %> 
+        />
+        <button type ="submit"> Update Dog </button>
+    <a href="/dogs/">Back to Dogs</a>
+    </form>
+  </body>
+</html>
